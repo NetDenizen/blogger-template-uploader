@@ -145,6 +145,7 @@ class renderer:
 		for e in self.entries:
 			output.extend( e.render() )
 		return ''.join(output)
-	def __init__(self, TemplateParser):
-		self.parser = TemplateParser
+	def __init__(self, raw):
+		self.raw = raw
+		self.parser = parser(self.raw)
 		self._GenerateEntries()
