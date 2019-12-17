@@ -37,7 +37,7 @@ class RenderOneLineEntry(RenderListEntry):
 	def AddEntry(self, idx):
 		if not (self.entry.MinEntryAmount == 0 and self.entry.MaxEntryAmount == 0) and idx >= self.entry.MaxEntryAmount:
 			raise RenderError()
-		ExpandArray(self.value, unfound(), idx)
+		ExpandArray(self.value, unfound, idx)
 	def SetEntry(self, idx, value):
 		self.AddEntry(idx)
 		self.value[idx] = value
